@@ -21,27 +21,33 @@ public class FollowingController {
         this.userService = userService;
     }
 
-    @RequestMapping(method = RequestMethod.POST, value = "/users/{followerUserId}/follow/{followedUserId}")
-    public void followUser(@PathVariable("followerUserId") Long followerUserId, @PathVariable("followedUserId") Long followedUserId) {
+    @RequestMapping(method = RequestMethod.POST, value = "/users/{followerUserId}/requestFollow/{followedUserId}")
+    public void requestForFollowUser(@PathVariable("followerUserId") Long followerUserId, @PathVariable("followedUserId") Long followedUserId) {
         User follower = userService.getUser(followerUserId);
         User followed = userService.getUser(followedUserId);
-        followingService.followUser(follower,followed);
+        followingService.requestForFollowUser(follower, followed);
     }
 
     @RequestMapping(method = RequestMethod.DELETE, value = "/users/{followerUserId}/unfollow/{followedUserId}")
     public void unFollowUser(@PathVariable("followerUserId") Long followerUserId, @PathVariable("followedUserId") Long followedUserId) {
         User follower = userService.getUser(followerUserId);
         User followed = userService.getUser(followedUserId);
-        followingService.unFollowUser(follower,followed);
+        followingService.unFollowUser(follower, followed);
     }
 
-
-    @RequestMapping(method = RequestMethod.PUT, value = "/users/{followerUserId}/accepted/{followedUserId}")
-    public void accepted(@PathVariable("followerUserId") Long followerUserId, @PathVariable("followedUserId") Long followedUserId) {
+    @RequestMapping(method = RequestMethod.PUT, value = "/users/{followedUserId}/acceptedRequest/{followerUserId}")
+    public void acceptRequestFollow(@PathVariable("followerUserId") Long followerUserId, @PathVariable("followedUserId") Long followedUserId) {
         User follower = userService.getUser(followerUserId);
         User followed = userService.getUser(followedUserId);
-        Following following = followingService.accepted(follower,followed);
+        Following following = followingService.getFollowing(follower, followed);
         following.setAccepted(true);
-        followingService.updateState(following);
+        followingService.acceptFollowRequest(following);
+    }
+
+    @RequestMapping(method = RequestMethod.DELETE, value = "/users/{followedUserId}/rejectedRequest/{followerUserId}")
+    public void rejectRequestFollow(@PathVariable("followerUserId") Long followerUserId, @PathVariable("followedUserId") Long followedUserId) {
+        User follower = userService.getUser(followerUserId);
+        User followed = userService.getUser(followedUserId);
+        followingService.unFollowUser(follower, followed);
     }
 }

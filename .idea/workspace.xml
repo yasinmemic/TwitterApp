@@ -33,7 +33,7 @@
     <property name="RequestMappingsPanelWidth2" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/com/opthema/twitter/service" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -51,6 +51,8 @@
       <recent name="" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\TOSHIBA\Desktop\twitterApp\src\main\java\com\opthema\twitter\service" />
+      <recent name="C:\Users\TOSHIBA\Desktop\twitterApp\src\main\resources" />
       <recent name="C:\Users\TOSHIBA\Desktop\twitterApp" />
     </key>
   </component>
@@ -99,10 +101,23 @@
       <workItem from="1574452730813" duration="5082000" />
       <workItem from="1574503856436" duration="19346000" />
       <workItem from="1574524197952" duration="8102000" />
+      <workItem from="1574533318167" duration="263000" />
+      <workItem from="1574540969716" duration="806000" />
+      <workItem from="1574578059449" duration="16843000" />
+      <workItem from="1574596408237" duration="13812000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="SpringBootApplicationConfigurationType">
+        <watch expression="tweetService" language="JAVA" />
+        <watch expression="tweetResponses" />
+        <watch expression="this.h" custom="java.lang.reflect.Proxy,com.opthema.twitter.service.ReTweetService" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

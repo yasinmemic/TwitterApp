@@ -27,5 +27,4 @@ public class Following extends AbstractEntity implements Serializable {
     private User followed;
 
     private boolean isAccepted;
-
 }

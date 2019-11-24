@@ -5,6 +5,8 @@ import com.opthema.twitter.entity.User;
 import com.opthema.twitter.repository.FollowingRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class FollowingService implements IFollowingService {
     private FollowingRepository followingRepository;
@@ -12,7 +14,7 @@ public class FollowingService implements IFollowingService {
         this.followingRepository = followingRepository;
     }
     @Override
-    public void followUser(User follower, User followed) {
+    public void requestForFollowUser(User follower, User followed) {
        Following following = new Following();
        following.setFollower(follower);
        following.setFollowed(followed);
@@ -25,12 +27,17 @@ public class FollowingService implements IFollowingService {
     }
 
     @Override
-    public Following accepted(User follower, User followed) {
+    public Following getFollowing(User follower, User followed) {
         return followingRepository.findByFollower_IdAndFollowed_Id(follower.getId(),followed.getId());
     }
 
     @Override
-    public void updateState(Following following) {
+    public void acceptFollowRequest(Following following) {
         followingRepository.save(following);
+    }
+
+    @Override
+    public List<Following> getAllFollowingByUserId(Long id) {
+        return followingRepository.findAllByFollower_Id(id);
     }
 }
