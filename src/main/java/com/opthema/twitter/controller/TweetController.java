@@ -3,7 +3,6 @@ package com.opthema.twitter.controller;
 import com.opthema.twitter.entity.*;
 import com.opthema.twitter.model.TweetRequest;
 import com.opthema.twitter.model.TweetResponse;
-import com.opthema.twitter.model.UserRequest;
 import com.opthema.twitter.service.*;
 import org.modelmapper.ModelMapper;
 import org.springframework.http.MediaType;
@@ -13,6 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:3000")
 public class TweetController extends BaseController {
 
     private ITweetService tweetService;
@@ -31,7 +31,7 @@ public class TweetController extends BaseController {
     }
 
     //retweet processing
-    @RequestMapping(method = RequestMethod.GET, value = "/users/{userId}/profile", consumes = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(method = RequestMethod.GET, value = "/users/{userId}/profile")
     public List<TweetResponse> getAllTweetsForProfileTimeline(@PathVariable("userId") Long userId) {
         List<Tweet> tweets = tweetService.getAllTweets(userId);
         List<TweetResponse> tweetResponses = mapAll(tweets, TweetResponse.class);
@@ -54,8 +54,7 @@ public class TweetController extends BaseController {
         return allTweetResponses;
     }
 
-
-    @RequestMapping(method = RequestMethod.GET, value = "/users/{userId}/home", consumes = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(method = RequestMethod.GET, value = "/users/{userId}/home")
     public List<TweetResponse> getAllTweetsHomeTimeline(@PathVariable("userId") Long userId) {
         List<Tweet> tweets = tweetService.getAllTweets(userId);
         List<TweetResponse> tweetResponses = mapAll(tweets, TweetResponse.class);
@@ -66,9 +65,9 @@ public class TweetController extends BaseController {
         //------------------------------------------------ get following user tweeets
         List<TweetResponse> allTweetResponses = mapAll(otherUsersTweets, TweetResponse.class);
         allTweetResponses.addAll(tweetResponses);
+        
         return allTweetResponses;
     }
-
 
     @RequestMapping(method = RequestMethod.GET, value = "/users/{userId}/tweets/{tweetId}", consumes = MediaType.APPLICATION_JSON_VALUE)
     public TweetResponse getTweet(@PathVariable("userId") Long userId, @PathVariable("tweetId") Long tweetId) {
@@ -91,3 +90,6 @@ public class TweetController extends BaseController {
         tweetService.deleteTweet(tweetId);
     }
 }
+
+
+

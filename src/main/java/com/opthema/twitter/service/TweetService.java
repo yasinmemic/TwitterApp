@@ -17,7 +17,7 @@ public class TweetService implements ITweetService {
 
     @Override
     public List<Tweet> getAllTweets(Long userId) {
-       return tweetRepository.getTweetsByUserId(userId);
+       return tweetRepository.getTweetsByUserIdOrderByCreatedAtDesc(userId);
     }
 
     @Override

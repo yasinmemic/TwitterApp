@@ -8,5 +8,6 @@ import java.util.List;
 
 @Repository
 public interface TweetRepository extends JpaRepository<Tweet,Long> {
-    List<Tweet> getTweetsByUserId (Long userId);
+    List<Tweet> getTweetsByUserIdOrderByCreatedAtDesc (Long userId);
+
 }
