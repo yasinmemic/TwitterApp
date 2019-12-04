@@ -6,9 +6,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 import java.io.Serializable;
 
 @Data
@@ -16,11 +14,13 @@ import java.io.Serializable;
 @AllArgsConstructor
 @Builder
 @Entity
+@Table(uniqueConstraints=
+@UniqueConstraint(columnNames={"USER_ID", "TWEET_ID"}))
 public class LikedTweet extends AbstractEntity implements Serializable {
 
     @ManyToOne
     @JoinColumn(name = "USER_ID")
-    private User userId;
+    private Users userId;
 
     @ManyToOne
     @JoinColumn(name = "TWEET_ID")

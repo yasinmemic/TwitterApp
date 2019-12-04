@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="626436f3-ea59-4742-a837-36cb6a1677fb" name="Default Changelist" comment="" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -24,6 +23,11 @@
     </option>
   </component>
   <component name="ProjectId" id="1TzAoxGpGt1edoht56KBLG1pPQV" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelOrder1" value="1" />
@@ -33,14 +37,15 @@
     <property name="RequestMappingsPanelWidth2" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/com/opthema/twitter/service" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
@@ -55,18 +60,6 @@
       <recent name="C:\Users\TOSHIBA\Desktop\twitterApp\src\main\resources" />
       <recent name="C:\Users\TOSHIBA\Desktop\twitterApp" />
     </key>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
   </component>
   <component name="RunManager">
     <configuration name="TwitterApp" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
@@ -88,6 +81,18 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -108,12 +113,121 @@
       <workItem from="1574659757405" duration="19118000" />
       <workItem from="1574704657400" duration="1566000" />
       <workItem from="1574743840123" duration="29000" />
-      <workItem from="1574743898666" duration="6787000" />
+      <workItem from="1574743898666" duration="7388000" />
+      <workItem from="1574793723791" duration="2245000" />
+      <workItem from="1574836312145" duration="7912000" />
+      <workItem from="1574844749003" duration="4465000" />
+      <workItem from="1574849233197" duration="10287000" />
+      <workItem from="1574867940029" duration="3603000" />
+      <workItem from="1574915879790" duration="13925000" />
+      <workItem from="1574951115413" duration="1606000" />
+      <workItem from="1574964225481" duration="3776000" />
+      <workItem from="1575002687466" duration="600000" />
+      <workItem from="1575006604976" duration="14216000" />
+      <workItem from="1575056042352" duration="2477000" />
+      <workItem from="1575104600914" duration="2876000" />
+      <workItem from="1575111306630" duration="11715000" />
+      <workItem from="1575128567944" duration="15587000" />
+      <workItem from="1575183438815" duration="3800000" />
+      <workItem from="1575200256049" duration="18229000" />
+      <workItem from="1575262472748" duration="17603000" />
+      <workItem from="1575348797349" duration="5205000" />
+      <workItem from="1575434425807" duration="9026000" />
+      <workItem from="1575456401340" duration="10719000" />
+      <workItem from="1575483342440" duration="2411000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="510" y="99" key="#com.intellij.ide.util.MemberChooser" timestamp="1575470416812">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="510" y="99" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680@0.0.1280.680" timestamp="1575470416812" />
+    <state x="765" y="229" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1575215368330" />
+    <state x="278" y="270" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1575444503495">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="278" y="270" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1280.680@0.0.1280.680" timestamp="1575444503495" />
+    <state x="530" y="49" width="418" height="582" key="#xdebugger.evaluate" timestamp="1575469712092">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="530" y="49" width="418" height="582" key="#xdebugger.evaluate/0.0.1280.680@0.0.1280.680" timestamp="1575469712092" />
+    <state width="400" height="466" key="DebuggerActiveHint" timestamp="1575458754165">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="400" height="466" key="DebuggerActiveHint/0.0.1280.680@0.0.1280.680" timestamp="1575458754165" />
+    <state width="1237" height="131" key="GridCell.Tab.0.bottom" timestamp="1575471741160">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="131" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1575471741160" />
+    <state width="1877" height="334" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1575222533626" />
+    <state width="1237" height="131" key="GridCell.Tab.0.center" timestamp="1575471741160">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="131" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1575471741160" />
+    <state width="1877" height="334" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1575222533626" />
+    <state width="1237" height="131" key="GridCell.Tab.0.left" timestamp="1575471741160">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="131" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1575471741160" />
+    <state width="1877" height="334" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1575222533626" />
+    <state width="1237" height="131" key="GridCell.Tab.0.right" timestamp="1575471741160">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="131" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1575471741160" />
+    <state width="1877" height="334" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1575222533626" />
+    <state width="1237" height="131" key="GridCell.Tab.1.bottom" timestamp="1575471741161">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="131" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1575471741161" />
+    <state width="1877" height="334" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1575222533627" />
+    <state width="1237" height="131" key="GridCell.Tab.1.center" timestamp="1575471741161">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="131" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1575471741161" />
+    <state width="1877" height="334" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1575222533627" />
+    <state width="1237" height="131" key="GridCell.Tab.1.left" timestamp="1575471741160">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="131" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1575471741160" />
+    <state width="1877" height="334" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1575222533626" />
+    <state width="1237" height="131" key="GridCell.Tab.1.right" timestamp="1575471741161">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="131" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1575471741161" />
+    <state width="1877" height="334" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1575222533627" />
+    <state width="1237" height="131" key="GridCell.Tab.2.bottom" timestamp="1575471741161">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="131" key="GridCell.Tab.2.bottom/0.0.1280.680@0.0.1280.680" timestamp="1575471741161" />
+    <state width="1237" height="131" key="GridCell.Tab.2.center" timestamp="1575471741161">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="131" key="GridCell.Tab.2.center/0.0.1280.680@0.0.1280.680" timestamp="1575471741161" />
+    <state width="1237" height="131" key="GridCell.Tab.2.left" timestamp="1575471741161">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="131" key="GridCell.Tab.2.left/0.0.1280.680@0.0.1280.680" timestamp="1575471741161" />
+    <state width="1237" height="131" key="GridCell.Tab.2.right" timestamp="1575471741161">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="131" key="GridCell.Tab.2.right/0.0.1280.680@0.0.1280.680" timestamp="1575471741161" />
+    <state x="668" y="347" key="com.intellij.ide.util.TipDialog" timestamp="1575483343857">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="445" y="227" key="com.intellij.ide.util.TipDialog/0.0.1280.680@0.0.1280.680" timestamp="1575456401876" />
+    <state x="668" y="347" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1575483343857" />
+    <state x="297" y="151" key="run.anything.popup" timestamp="1575435780825">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="297" y="151" key="run.anything.popup/0.0.1280.680@0.0.1280.680" timestamp="1575435780825" />
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1575355927830">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1575355927830" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

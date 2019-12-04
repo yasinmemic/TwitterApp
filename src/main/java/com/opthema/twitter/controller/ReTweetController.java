@@ -1,8 +1,9 @@
 package com.opthema.twitter.controller;
 
+import com.opthema.twitter.entity.LikedTweet;
 import com.opthema.twitter.entity.ReTweet;
 import com.opthema.twitter.entity.Tweet;
-import com.opthema.twitter.entity.User;
+import com.opthema.twitter.entity.Users;
 import com.opthema.twitter.service.IFollowingService;
 import com.opthema.twitter.service.IReTweetService;
 import com.opthema.twitter.service.ITweetService;
@@ -30,21 +31,18 @@ public class ReTweetController {
 
     @RequestMapping(method = RequestMethod.POST, value = "/users/{followerId}/rt/{followedId}/tweets/{tweetId}")
     public void reTweet(@PathVariable("followerId") Long followerId, @PathVariable("followedId") Long followedId, @PathVariable("tweetId") Long tweetId){
-        User follower = userService.getUser(followerId);
-        User followed = userService.getUser(followedId);
+        Users follower = userService.getUser(followerId);
         Tweet tweet = tweetService.getTweet(tweetId);
-       if(followingService.getFollowing(follower,followed) != null){
+        ReTweet reTweet = reTweetService.getReTweet(followerId,tweetId);
+        if(reTweet == null){
+            tweet.setRtCount(tweet.getRtCount()+1);
             reTweetService.reTweet(follower,tweet);
         }
-        else
-        System.out.println("İki kullanıcı takipleşmiyor...");
-
+        else{
+            tweet.setRtCount(tweet.getRtCount()-1);
+            reTweetService.unReTweet(tweet,followerId,tweetId);
+        }
     }
 
- //   cancel retweet
-    @RequestMapping(method = RequestMethod.DELETE, value = "/users/{followerId}/cancelRt/{followedId}/tweets/{tweetId}")
-    public void cancelReTweet(@PathVariable("followerId") Long followerId, @PathVariable("followedId") Long followedId, @PathVariable("tweetId") Long tweetId){
-        ReTweet reTweet = reTweetService.getReTweet(followerId,tweetId);
-        reTweetService.cancelReTweet(reTweet);
-    }
+
 }

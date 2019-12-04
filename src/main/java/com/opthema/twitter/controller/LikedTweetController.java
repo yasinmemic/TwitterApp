@@ -3,7 +3,7 @@ package com.opthema.twitter.controller;
 
 import com.opthema.twitter.entity.LikedTweet;
 import com.opthema.twitter.entity.Tweet;
-import com.opthema.twitter.entity.User;
+import com.opthema.twitter.entity.Users;
 import com.opthema.twitter.service.IFollowingService;
 import com.opthema.twitter.service.ILikedTweetService;
 import com.opthema.twitter.service.ITweetService;
@@ -30,21 +30,17 @@ public class LikedTweetController {
 
     @RequestMapping(method = RequestMethod.POST, value = "/users/{followerId}/liked/{followedId}/tweets/{tweetId}")
     public void likeTweet(@PathVariable("followerId") Long followerId, @PathVariable("followedId") Long followedId, @PathVariable("tweetId") Long tweetId){
-        User follower = userService.getUser(followerId);
-        User followed = userService.getUser(followedId);
+        Users follower = userService.getUser(followerId);
         Tweet tweet = tweetService.getTweet(tweetId);
-        if(followingService.getFollowing(follower,followed) != null){
+        LikedTweet likedTweet = likedTweetService.getLikedTweet(followerId,tweetId);
+        if(likedTweet == null){
+            tweet.setLikedCount(tweet.getLikedCount()+1);
             likedTweetService.likeTweet(follower,tweet);
         }
-        else
-            System.out.println("İki kullanıcı takipleşmiyor...");
-
+        else{
+            tweet.setLikedCount(tweet.getLikedCount()-1);
+            likedTweetService.unLike(tweet,followerId,tweetId);
+        }
     }
 
-    //   cancel liked
-    @RequestMapping(method = RequestMethod.DELETE, value = "/users/{followerId}/cancelLiked/{followedId}/tweets/{tweetId}")
-    public void cancelLikedTweet(@PathVariable("followerId") Long followerId, @PathVariable("followedId") Long followedId, @PathVariable("tweetId") Long tweetId){
-        LikedTweet likedTweet = likedTweetService.getLikedTweet(followerId,tweetId);
-        likedTweetService.cancelLikedTweet(likedTweet);
-    }
 }

@@ -9,10 +9,12 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Collections;
 import java.util.List;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "http://localhost:8080")
 public class TweetController extends BaseController {
 
     private ITweetService tweetService;
@@ -35,7 +37,7 @@ public class TweetController extends BaseController {
     public List<TweetResponse> getAllTweetsForProfileTimeline(@PathVariable("userId") Long userId) {
         List<Tweet> tweets = tweetService.getAllTweets(userId);
         List<TweetResponse> tweetResponses = mapAll(tweets, TweetResponse.class);
-        User user = userService.getUser(userId);
+        Users user = userService.getUser(userId);
         List<ReTweet> reTweetList = reTweetService.getAllReTweetByUserId(user);
         List<Tweet> tweetList = new ArrayList<>();
         reTweetList.forEach(x -> tweetList.add(tweetService.getTweet(x.getTweetId().getId())));
@@ -44,9 +46,9 @@ public class TweetController extends BaseController {
         return allTweetResponses;
     }
 
-    @RequestMapping(method = RequestMethod.GET, value = "/users/{userId}/liked", consumes = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(method = RequestMethod.GET, value = "/users/{userId}/liked")
     public List<TweetResponse> getAllLikedTweets(@PathVariable("userId") Long userId) {
-        User user = userService.getUser(userId);
+        Users user = userService.getUser(userId);
         List<LikedTweet> likedTweets = likedTweetService.getAllLikedTweetByUserId(user);
         List<Tweet> tweetList = new ArrayList<>();
         likedTweets.forEach(x -> tweetList.add(tweetService.getTweet(x.getTweetId().getId())));
@@ -59,17 +61,26 @@ public class TweetController extends BaseController {
         List<Tweet> tweets = tweetService.getAllTweets(userId);
         List<TweetResponse> tweetResponses = mapAll(tweets, TweetResponse.class);
         //------------------------------------------------- get following user tweeets
-        List<Following> otherUsers = followingService.getAllFollowingByUserId(userId);
+        List<Following> otherUsers = followingService.getAllFollowingByFollowerId(userId);
         List<Tweet> otherUsersTweets = new ArrayList<>();
+
+        for (int i = 0; i < otherUsers.size(); i++) {
+            if (otherUsers.get(i).isAccepted() == true) {
+                continue;
+            } else {
+                otherUsers.remove(i);
+                i--;
+            }
+        }
         otherUsers.forEach(x -> tweetService.getAllTweets(x.getFollowed().getId()).forEach(y -> otherUsersTweets.add(y)));
         //------------------------------------------------ get following user tweeets
         List<TweetResponse> allTweetResponses = mapAll(otherUsersTweets, TweetResponse.class);
         allTweetResponses.addAll(tweetResponses);
-        
+        Collections.sort(allTweetResponses);
         return allTweetResponses;
     }
 
-    @RequestMapping(method = RequestMethod.GET, value = "/users/{userId}/tweets/{tweetId}", consumes = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(method = RequestMethod.GET, value = "/users/{userId}/tweets/{tweetId}")
     public TweetResponse getTweet(@PathVariable("userId") Long userId, @PathVariable("tweetId") Long tweetId) {
         Tweet tweet = tweetService.getTweet(tweetId);
         TweetResponse tweetResponse = map(tweet, TweetResponse.class);
@@ -77,19 +88,17 @@ public class TweetController extends BaseController {
     }
 
 
-    @RequestMapping(method = RequestMethod.POST, value = "/users/{userId}/tweets", consumes = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(method = RequestMethod.POST, value = "/users/{userId}/tweets")
     public void addTweet(@RequestBody TweetRequest tweetRequest, @PathVariable("userId") Long userId) {
-        User user = userService.getUser(userId);
+        Users user = userService.getUser(userId);
         Tweet tweet = map(tweetRequest, Tweet.class);
         tweet.setUser(user);
         tweetService.addTweet(tweet);
     }
 
-    @RequestMapping(method = RequestMethod.DELETE, value = "/users/{userId}/tweets/{tweetId}", consumes = MediaType.APPLICATION_JSON_VALUE)
-    public void deleteTweet(@PathVariable("tweetId") Long tweetId) {
-        tweetService.deleteTweet(tweetId);
+    @RequestMapping(method = RequestMethod.POST, value = "/users/{userId}/deleteTweet/{tweetId}")
+    public void deleteTweet(@PathVariable("userId") Long userId, @PathVariable("tweetId") Long tweetId) {
+        Tweet tweet = tweetService.getTweet(tweetId);
+        tweetService.deleteTweet(tweet.getId());
     }
 }
-
-
-
