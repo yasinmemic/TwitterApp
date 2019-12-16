@@ -1,0 +1,373 @@
+.main-body {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    min-height: 80rem;
+}
+
+.body {
+    display: flex;
+    flex-direction: column;
+}
+
+.inner-body {
+    display: flex;
+    flex-direction: row;
+}
+
+.tweet-body {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2%;
+    width: 100%;
+    height: 200px;
+    border: 0.3px;
+    border-style: solid;
+    border-color: rgb(235, 234, 231);
+    background-color: -internal-root-color;
+    margin-bottom: 0.2rem;
+}
+
+.tweet-body:hover {
+    background-color: #f1f4f8;
+    border: 0.3px;
+    border-style: solid;
+    
+    border-color: rgb(235, 234, 231);
+}
+
+.picture {
+    margin-top: 15%;
+    margin-left: 10%;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+}
+
+.name {
+    text-decoration: none;
+    margin-top: 7%;
+    display: flex;
+    flex-direction: row;
+    min-width: 85px;
+    height: 17px;
+    font-family: HelveticaNeue;
+    font-size: 14px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: -0.6px;
+    color: black;
+}
+
+.userName {
+    color: gray;
+    margin-top: 7%;
+    display: flex;
+    flex-direction: row;
+    min-width: 85px;
+    height: 17px;
+    font-family: HelveticaNeue;
+    font-size: 14px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: -0.6px;
+}
+
+.date {
+    margin-top: 7%;
+    display: flex;
+    flex-direction: row;
+    min-width: 85px;
+    height: 17px;
+    font-family: HelveticaNeue;
+    font-size: 14px;
+    letter-spacing: -0.6px;
+    color: gray;
+}
+
+.like {
+    margin-top: 25%;
+    font-family: HelveticaNeue;
+    color: #020202;
+    
+}
+.like:active{
+    color: red;
+}
+
+.rt {
+    margin-top: 25%;
+    font-family: HelveticaNeue;
+    color: #020202;
+}
+
+
+.handle {
+    margin-top: 5%;
+    margin-left: 10px;
+    margin-top: 19px;
+    min-width: 128px;
+    height: 16px;
+    font-family: HelveticaNeue;
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: -0.6px;
+    color: #75797d;
+}
+
+.tweet {
+    margin-top: 10%;
+    margin-bottom: 10%;
+    width: 445px;
+    height: 100%;
+    font-family: HelveticaNeue;
+    font-size: 14px;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: -0.6px;
+    color: #080808;
+    overflow: hidden;
+     text-overflow: ellipsis;
+}
+
+.addTweet {
+    margin-bottom: 5%;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+   
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0);
+    border: 0.2px;
+    border-style: solid;
+    border-color: rgb(235, 234, 231);
+    background-color: -internal-root-color;
+}
+
+.typeTweet {
+    display: flex;
+    flex-direction: column;
+    width: 99%;
+    height: 12vh;
+    border: 0px;
+    resize: none;
+    margin-bottom: 0%;
+    margin-top: 3%;
+    border: 0 none #FFF;
+    overflow: hidden;
+    outline:none;
+}
+
+
+.tweetButton {
+
+    font-weight: bold;
+    width: 12vh;
+    height: 5vh;
+    background: rgb(192, 221, 250);
+    border: #55ACEE;
+    border-radius: 5em/5em;
+    float: right;
+}
+
+.tweetButton:hover {
+    background: #55ACEE;
+    background-position: 0 -21px;
+}
+
+.Home {
+    text-decoration: none;
+    color: black;
+}
+
+.Home:hover {
+    text-decoration: none;
+    color: black;
+}
+
+.underHomeLine {
+    font-family:  system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
+    padding: 10px;
+    border-bottom-style: solid;
+    font-size: 25px;
+    border-bottom-color: rgb(235, 234, 231);
+    font-weight: bold;
+}
+
+.leftButtons {
+    margin-top: 5%;
+    font-weight: bold;
+    font-size: 100%;
+    border: 0;
+    color: black;
+}
+
+.leftButtons:hover {
+    font-size: 100%;
+    border: 0;
+    background-color: rgb(230, 241, 248);
+    color: #55ACEE;
+}
+
+.fa {
+    text-decoration: none;
+    padding: 10px;
+    font-size: 40px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+}
+
+
+/* Add a hover effect if you want */
+
+.fa:hover {
+    text-decoration: none;
+    opacity: 0.7;
+}
+
+
+/* Twitter */
+
+.fa-twitter {
+    background: white;
+    color: #55ACEE;
+}
+
+.leftTweetButton {
+    
+    font-weight: bold;
+    width: 25vh;
+    height: 7vh;
+    background: rgb(81, 176, 248);
+    border: #55ACEE;
+    border-radius: 5em/5em;
+}
+
+.leftTweetButton:hover {
+    font-weight: bold;
+    width: 25vh;
+    height: 7vh;
+    background: rgb(32, 153, 245);
+    border: #55ACEE;
+    border-radius: 5em/5em;
+}
+
+#reTweetButton {
+    font-size: 15px;
+}
+
+#reTweetButton:hover {
+    color: red;
+    font-size: 15px;
+}
+#reTweetButton:active {
+    color: yellow;
+    font-size: 15px;
+}
+
+
+
+/* search form */
+#wrap{
+    text-align:center;
+   
+
+  }
+  #nav-search {
+    margin: 0 auto;
+    position: relative;
+    width: 100%;
+    height: 100%;
+   
+
+  }
+  
+  #nav-search input{
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 15px;
+    line-height: 40px;
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 6px 27px 6px 12px;
+    cursor: pointer;
+    color: rgb(0, 0, 0);
+    background-color: rgb(236, 236, 236);
+    border-style: solid;
+    border-color: white;
+
+    border-radius: 13px 13px 13px 13px;
+    box-shadow: 0px 1px 2px rgba(255, 255, 255, 0.2) inset;
+  }
+  
+  #nav-search .icon {
+   margin-top: 5px
+   
+   ;
+    position: absolute;
+    display: block;
+    top: 4px;
+    right: 4px;
+    width: 14px;
+    height: 15px;
+    background: url("https://abs.twimg.com/a/1374049044/t1/img/twitter_web_sprite_icons.png") -20px -710px no-repeat transparent;
+    border: none;
+    text-indent: -200px;
+    padding: 0;
+    cursor: pointer;
+  }
+
+  .profilePagePicture{
+      margin-left: 2%;
+      width: 25vh;
+      height: 25vh;
+      color:black;
+  }
+
+.count:hover{
+    font-size: 100%;
+    border: 0;
+   font-size: 10px;
+   text-decoration: none;
+    background-color: rgb(230, 241, 248);
+    color:black;
+}
+.count{
+    font-size: 100%;
+    
+    color:black;
+}
+    
+  .right 
+  { 
+    background-color: rgb(245, 240, 240);
+    color: black;
+    text-align: center;
+  
+    margin-top:1%; 
+    width: 100%;
+    height: 4vh;
+    border-radius: 8px;
+    font-size: 20px; 
+  }   
+  .right:hover
+  { 
+    color: black;
+    background-color:  rgb(232, 245, 255);
+    width: 100%;
+    height: 4vh;
+    border-radius: 15px;
+    font-size: 20px;  
+  } 
+.hoverItem:hover{
+    background-color: rgb(159, 212, 253);
+    border-radius: 50%;
+}
